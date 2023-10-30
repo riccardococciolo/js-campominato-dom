@@ -6,6 +6,21 @@ function generateNumbers(maxNumber) {
     return result
 }
 
+function getRndInteger(max, min) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateBombs(max) {
+    const result = [];
+    while (result.length < 16) {
+        const rndNumber = getRndInteger(1, max);
+        if(!result.includes(rndNumber)) {
+            result.push(rndNumber)
+        }
+    }
+    return result
+}
+
 console.log(generateNumbers(10));
 
 document.querySelector(".button").addEventListener("click", function() {
